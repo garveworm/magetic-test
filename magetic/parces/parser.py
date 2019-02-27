@@ -38,7 +38,12 @@ class Parser(object):
         :return: game title
         """
         game_title = game.select("a.title")
-        return game_title[0].text
+        title = ""
+        try:
+            title = game_title[0].text
+        except IndexError:
+            title = "No title"
+        return title
 
     def parse_category(self, category):
         """
@@ -47,7 +52,12 @@ class Parser(object):
         :return: category title
         """
         category_title = category.select("a.title-link")
-        return category_title[0].text
+        title = ""
+        try:
+            title = category_title[0].text
+        except IndexError:
+            title = "No title"
+        return title
 
 
     def parse(self):
