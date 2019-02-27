@@ -38,7 +38,12 @@ class Parser(object):
         :return: game title
         """
         game_title = game.select("a.title")
-        return game_title[0].text
+        title = ""
+        try:
+            title = game_title[0].text
+        except IndexError:
+            title = "No title"
+        return title
 
     def parse_category(self, category):
         """
@@ -66,7 +71,6 @@ class Parser(object):
         for cat in categories:
             # get name of every category
             category_name = self.parse_category(cat)
-            print(category_name)
 
             # get name of games in category
             games = cat.find_all("div", class_="card-content id-track-click id-track-impression")

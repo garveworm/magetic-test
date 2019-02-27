@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Parse project created to parse games from Google play store
 
 
@@ -19,3 +20,4 @@ test/html/ for html representation
 to use search add a query parameter to the url in this format:
  
 test/html/?search={one or more keywords separated by space}
+=======
